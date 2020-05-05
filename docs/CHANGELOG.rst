@@ -2,6 +2,15 @@
 Changelog
 =========
 
+`1.4.2 <https://github.com/dafyddj/firefox-formula/compare/v1.4.1...v1.4.2>`_ (2020-05-05)
+----------------------------------------------------------------------------------------------
+
+Documentation
+^^^^^^^^^^^^^
+
+
+* **readme:** use ``:depth: 1`` as used in the ``template-formula`` now (\ `ba73de5 <https://github.com/dafyddj/firefox-formula/commit/ba73de51f99d4dffc7e39113f0e8b0393aad0424>`_\ )
+
 `1.4.1 <https://github.com/dafyddj/firefox-formula/compare/v1.4.0...v1.4.1>`_ (2020-02-18)
 ----------------------------------------------------------------------------------------------
 
