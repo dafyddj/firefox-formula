@@ -2,15 +2,15 @@
 # vim: ft=yaml
 ---
 firefox:
-  pkg:
-    lang: en-GB
+#  pkg:
+#    lang: en-GB
   lookup:
     gpo:
       policies:
         Disable Private Browsing: Enabled
         Disable Update: Enabled
-      policy_revision: '1.11'
+      policy_revision: '2.0'
     pkg:
       name: firefox-esr_x86
-      version: 68.0
+      version: 78.0
       extra_install_flags: /DesktopShortcut=false /TaskbarShortcut=false
