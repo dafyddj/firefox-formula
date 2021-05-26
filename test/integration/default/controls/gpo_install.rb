@@ -2,7 +2,7 @@
 
 file_owner = 'BUILTIN\\Administrators'
 policy_dir = 'C:\\Windows\\PolicyDefinitions'
-policy_revision = { 'firefox' => '1.11', 'mozilla' => '1.0' }
+policy_revision = { 'firefox' => '2.0', 'mozilla' => '1.0' }
 
 control 'firefox-gpo-install' do
   title 'Firefox admin templates should be installed'

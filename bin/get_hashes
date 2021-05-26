@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+
+import hashlib
+import os
+import yaml
+
+def get_file_hash(filename):
+
+  with open(filename,"rb") as f:
+    bytes = f.read() # read entire file as bytes
+    readable_hash = hashlib.sha256(bytes).hexdigest();
+
+    return readable_hash
+
+result = {}
+versions = ["1.11", "1.12", "1.13", "1.14", "1.15", "1.16", "1.17", "2.0", "2.01", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10"]
+
+for version in versions:
+  version_hash = {
+    "firefox": { "admx": "", "adml": "" },
+    "mozilla": { "admx": "", "adml": "" }
+  }
+
+  os.system(f"git checkout v{version}")
+  
+  files = [(f,ft) for f in version_hash.keys() for ft in version_hash[f].keys()]
+  
+  for f, ft in files:
+      if ft in "admx":
+          version_hash[f][ft] = get_file_hash(f"windows/{f}.{ft}")
+      else:
+          version_hash[f][ft] = get_file_hash(f"windows/en-US/{f}.{ft}")
+  result[version] = version_hash
+
+print(yaml.dump(result, default_flow_style=False))
